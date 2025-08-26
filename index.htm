@@ -11,7 +11,8 @@
     <style>
         @font-face{font-family:'AveriaSerifLibre';src:url('/fonts/AveriaSerifLibre-Regular.woff2') format('woff2');font-weight:400;font-style:normal}
         @font-face{font-family:'AveriaSerifLibre';src:url('/fonts/AveriaSerifLibre-Bold.woff2') format('woff2');font-weight:700;font-style:normal}
-        @font-face{font-family:'NordicCyr';src:url('https://cdn.jsdelivr.net/gh/andrewgioia/nordic@master/nordic-cyrillic.woff2') format('woff2');font-weight:400;font-style:normal}
+        @font-face{font-family:'NordicCyr';src:url('NordicCyr-Bold.otf') format('opentype');font-weight:700;font-style:normal}
+        @font-face{font-family:'Norse Bold';src:url('https://db.onlinewebfonts.com/t/7d460b18433753a097e5bc2bad7c8dd9.woff2')format('woff2');font-weight:bold;font-style:normal;} 
         :root{--c-palette-1:#2b1e14;--c-palette-2:#452b18;--c-palette-3:#f7d6a9;--c-palette-4:#998e8a;--c-palette-5:#a56c37;--c-palette-6:#f6c06f;--primary:var(--c-palette-2);--secondary:var(--c-palette-1);--accent:var(--c-palette-6);--text:var(--c-palette-3);--dark:#121212;--light:#f8f9fa}
         *{margin:0;padding:0;box-sizing:border-box}
         body{background-color:var(--secondary);color:var(--text);line-height:1.6;background-image:radial-gradient(ellipse at top,var(--c-palette-2)50%,var(--c-palette-1));text-shadow:1px 1px 2px var(--c-palette-1);scroll-behavior:smooth;font-family:'AveriaSerifLibre','Averia Serif Libre','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;position:relative;overflow-x:hidden}
@@ -48,9 +49,9 @@
         .header-btn svg{width:30px;height:30px;fill:var(--text);transition:all 0.3s}
         .header-btn:hover svg{fill:var(--accent)}
         
-        .btn{display:inline-block;background-color:var(--accent);color:var(--c-palette-6);padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:700;transition:all 0.3s;text-shadow:none;border:none;cursor:pointer;font-family:'NordicCyr','AveriaSerifLibre',sans-serif}
+        .btn{display:inline-block;background-color:var(--accent);color:var(--c-palette-6);padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:700;transition:all 0.3s;text-shadow:none;border:none;cursor:pointer;font-family:'NordicCyr-Bold.otf','AveriaSerifLibre',sans-serif}
         .btn:hover{background-color:var(--c-palette-5);transform:translateY(-2px)}
-        .btn-nordic{font-family:'NordicCyr','AveriaSerifLibre',sans-serif;background:linear-gradient(to bottom,var(--c-palette-5),var(--c-palette-1));border:2px solid var(--c-palette-6);position:relative;overflow:hidden}
+        .btn-nordic{font-family:'NordicCyr';background:linear-gradient(to bottom,var(--c-palette-5),var(--c-palette-1));border:2px solid var(--c-palette-6);position:relative;overflow:hidden}
         
         /* руны на кнопке */
         .btn-nordic::before{content:"ᚨ";position:absolute;left:10px;opacity:0.7}
@@ -225,7 +226,7 @@
     <section class="community" id="community">
         <div class="container">
             <div class="community-info">
-                <h2>Правила сообщества</h2>
+                <h2 наверное это будет ссылкой на отдельную страницу, повторяющую google docs>Правила сообщества</h2>
                 <p>На нашем сервере следует уважать друг друга, играть честно, а так же соблюдать правила дискорда и телеграма.</p>
                 <p>За нарушения в последних мы сообщим площадкам, а так же накажем сами.</p>
                 <div class="rune-divider" style="font-size:1.5rem;letter-spacing:0.5rem">ᚹᚨᛚᚲᛁᚱᛁᚨ</div>
@@ -257,6 +258,4 @@
         });
     </script>
 </body>
-
 </html>
-
