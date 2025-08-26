@@ -53,8 +53,8 @@
         .btn:hover{background-color:var(--c-palette-5);transform:translateY(-2px)}
         .btn-nordic{font-family:'NordicCyr';background:linear-gradient(to bottom,var(--c-palette-5),var(--c-palette-1));border:2px solid var(--c-palette-6);position:relative;overflow:hidden}
         
-        /* руны на кнопке */
-        .btn-nordic::before{content:"ᚨ";position:absolute;left:10px;opacity:0.7}
+        /* руны на кнопке или иконка загрузки (пока убрал, всрато) */
+        .btn-nordic::before{content:"";position:absolute;left:10px;opacity:0.7}
         
         .hero{padding:100px 0 30px;position:relative;display:flex;flex-wrap:wrap}
         .welcome-section{width:70%;padding-right:30px}
@@ -167,7 +167,7 @@
                     <p>Запускаем игру через лончер. Всегда через него.</p>
                     <p>Создаём нового персонажа, играть предыдущими не получится.</p>
                     <p>Играем! 🍻</p>
-                    <a href="https://server.odinsons.fun/launcher/OdinsonsSetup.exe" class="btn btn-nordic" download style="margin-top:20px">С к а ч а т ь   л а у н ч е р</a>
+                    <a href="https://server.odinsons.fun/launcher/OdinsonsSetup.exe" class="btn btn-nordic" download style="margin-top:20px">Скачать лаунчер</a>
                 </div>
             </div>
             
@@ -259,4 +259,5 @@
     </script>
 </body>
 </html>
+
 
