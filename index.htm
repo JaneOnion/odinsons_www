@@ -13,7 +13,7 @@
         @font-face{font-family:'AveriaSerifLibre';src:url('/fonts/AveriaSerifLibre-Bold.woff2') format('woff2');font-weight:700;font-style:normal}
         @font-face{font-family:'NordicCyr';src:url('NordicCyr-Bold.otf') format('opentype');font-weight:700;font-style:normal}
         @font-face{font-family:'Norse Bold';src:url('https://db.onlinewebfonts.com/t/7d460b18433753a097e5bc2bad7c8dd9.woff2')format('woff2');font-weight:bold;font-style:normal;} 
-        :root{--c-palette-1:#2b1e14;--c-palette-2:#452b18;--c-palette-3:#f7d6a9;--c-palette-4:#998e8a;--c-palette-5:#a56c37;--c-palette-6:#f6c06f;--primary:var(--c-palette-2);--secondary:var(--c-palette-1);--accent:var(--c-palette-6);--text:var(--c-palette-3);--dark:#121212;--light:#f8f9fa}
+        :root{var(--brand-500):#2b1e14;--c-palette-1:#2b1e14;--c-palette-2:#452b18;--c-palette-3:#f7d6a9;--c-palette-4:#998e8a;--c-palette-5:#a56c37;--c-palette-6:#f6c06f;--primary:var(--c-palette-2);--secondary:var(--c-palette-1);--accent:var(--c-palette-6);--text:var(--c-palette-3);--dark:#121212;--light:#f8f9fa}
         *{margin:0;padding:0;box-sizing:border-box}
         body{background-color:var(--secondary);color:var(--text);line-height:1.6;background-image:radial-gradient(ellipse at top,var(--c-palette-2)50%,var(--c-palette-1));text-shadow:1px 1px 2px var(--c-palette-1);scroll-behavior:smooth;font-family:'AveriaSerifLibre','Averia Serif Libre','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;position:relative;overflow-x:hidden}
         h1,h2,h3,h4,h5,h6{font-family:'AveriaSerifLibre','Averia Serif Libre','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-weight:700}
@@ -49,7 +49,7 @@
         .header-btn svg{width:30px;height:30px;fill:var(--text);transition:all 0.3s}
         .header-btn:hover svg{fill:var(--accent)}
         
-        .btn{display:inline-block;background-color:var(--accent);color:var(--c-palette-6);padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:700;transition:all 0.3s;text-shadow:none;border:none;cursor:pointer;font-family:'NordicCyr-Bold.otf','AveriaSerifLibre',sans-serif}
+        .btn{display:inline-block;background-color:var(--accent);color:var(--c-palette-6);padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:700;transition:all 0.3s;text-shadow:none;border:none;cursor:pointer;font-family:'NordicCyr-Bold.otf','AveriaSerifLibre',sans-serif}
         .btn:hover{background-color:var(--c-palette-5);transform:translateY(-2px)}
         .btn-nordic{font-family:'NordicCyr';background:linear-gradient(to bottom,var(--c-palette-5),var(--c-palette-1));border:2px solid var(--c-palette-6);position:relative;overflow:hidden;font-size:36px;}
         
@@ -58,7 +58,7 @@
         
         .hero{padding:100px 0 30px;position:relative;display:flex;flex-wrap:wrap}
         .welcome-section{width:70%;padding-right:30px}
-        .discord-widget{width:30%}
+        .discord-widget{width:30%; background-color:#FF00FF}
         .hero h1{font-size:2.8rem;margin-bottom:15px;text-shadow:2px 2px 5px rgba(0,0,0,0.5);color:var(--accent)}
         .hero p{font-size:1.1rem;margin-bottom:6px;color:var(--text);line-height:1.5}
         
@@ -72,7 +72,7 @@
         
         /* на всю ширину */
         .full-width-section {width:100%;padding:40px 0 30px;text-align:center}
-        .full-width-section .rune-bg {padding:30px;border-radius:10px;max-width:900px;margin:0 auto}
+        .full-width-section .rune-bg {padding:30px;border-radius:8px;max-width:900px;margin:0 auto}
         .full-width-section h2 {color:var(--accent);margin-bottom:20px;font-size:2rem}
         .full-width-section h3 {color:var(--accent);margin-bottom:15px;font-size:1.6rem}
         .full-width-section p {margin-bottom:12px;font-size:1.1rem;line-height:1.4}
@@ -259,6 +259,7 @@
     </script>
 </body>
 </html>
+
 
 
 
