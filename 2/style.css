@@ -1,6 +1,5 @@
 @font-face{font-family:'AveriaSerifLibre';src:url('AveriaSerifLibre-Bold.woff2') format('woff2');font-weight:700;font-style:normal}
 @font-face{font-family:'NordicCyr';src:url('NordicCyr-Bold.otf') format('opentype');font-weight:700;font-style:normal}
-@font-face{font-family:'Norse Bold';src:url('https://db.onlinewebfonts.com/t/7d460b18433753a097e5bc2bad7c8dd9.woff2')format('woff2');font-weight:bold;font-style:normal;} 
 
 :root{
     --c-palette-1:#2b1e14;
