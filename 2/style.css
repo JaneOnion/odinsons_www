@@ -337,8 +337,8 @@ footer::before{
     .feature-item{flex:0 0 100%}
 }
 /* цвет ссылки */ 
-/* .rules-container a {
-    color: #2b1e14 !important;
+ .rules-container a {
+    color: #a56c37 !important;
     text-decoration: none;
     border-bottom: 1px dashed #2b1e14;
     transition: all 0.3s;
@@ -348,4 +348,3 @@ footer::before{
     color: var(--c-palette-5) !important;
     border-bottom: 1px solid var(--c-palette-5);
 }
-*/
