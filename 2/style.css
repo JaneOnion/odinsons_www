@@ -336,3 +336,15 @@ footer::before{
     .discord-widget{margin-top:30px}
     .feature-item{flex:0 0 100%}
 }
+/* цвет ссылки */ 
+.rules-container a {
+    color: #2b1e14 !important;
+    text-decoration: none;
+    border-bottom: 1px dashed #2b1e14;
+    transition: all 0.3s;
+}
+
+.rules-container a:hover {
+    color: var(--c-palette-5) !important;
+    border-bottom: 1px solid var(--c-palette-5);
+}
