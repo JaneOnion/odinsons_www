@@ -336,15 +336,53 @@ footer::before{
     .discord-widget{margin-top:30px}
     .feature-item{flex:0 0 100%}
 }
-/* цвет ссылки */ 
- .rules-container a {
-    color: #a56c37 !important;
+/* стили для всех ссылок */
+a {
+    color: var(--text);
     text-decoration: none;
-    border-bottom: 1px dashed #2b1e14;
-    transition: all 0.3s;
+    transition: color 0.3s ease;
 }
 
-.rules-container a:hover {
-    color: var(--c-palette-5) !important;
-    border-bottom: 1px solid var(--c-palette-5);
+a:hover {
+    color: var(--accent);
+}
+
+/* исключения для спецэлементов */
+.header-btn,
+.btn,
+.logo {
+    text-decoration: none !important;
+}
+
+.header-btn:hover,
+.btn:hover,
+.logo:hover {
+    text-decoration: none !important;
+}
+
+/* сохраняем стили при наведении на шапку */
+.header-btn:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.header-btn:hover svg {
+    fill: var(--accent);
+}
+
+/* сохраняем стили кнопке */
+.btn:hover {
+    color: var(--c-palette-6);
+    background-color: var(--c-palette-5);
+    transform: translateY(-2px);
+}
+
+/* для ссылок в теле */
+.full-width-section a {
+    border-bottom: 1px dashed var(--text);
+}
+
+.full-width-section a:hover {
+    color: var(--c-palette-6);
+    border-bottom: 1px solid var(--c-palette-6);
 }
