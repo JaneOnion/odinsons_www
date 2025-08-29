@@ -350,13 +350,19 @@ a:hover {
 /* исключения для спецэлементов */
 .header-btn,
 .btn,
-.logo {
+.logo,
+.feature-item a,
+.rune-bg a,
+.full-width-section a {
     text-decoration: none !important;
 }
 
 .header-btn:hover,
 .btn:hover,
-.logo:hover {
+.logo:hover,
+.feature-item a:hover,
+.rune-bg a:hover,
+.full-width-section a:hover {
     text-decoration: none !important;
 }
 
