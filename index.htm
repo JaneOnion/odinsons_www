@@ -280,15 +280,17 @@
                         steamName = await getSteamName(player.SteamID);
                     }
                     
-                    playerCard.innerHTML = `
-                        <img src="${player.AvatarUrl}" alt="Аватар" class="player-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiBmaWxsPSIjYTU2YzM3Ij48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNTAiIGZpbGw9IiNmNmMwNmYiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIyMDAiIHI9IjgwIiBmaWxsPSIjZjZkNmE5Ii8+PC9zdmc+'">
-                        <div class="player-info">
-                            <div class="player-name">${player.Name}</div>
-                            ${steamName ? `<div class="player-steamname">Steam: ${steamName}</div>` : ''}
-                            <div class="player-steamid">ID: ${player.SteamID}</div>
-                        </div>
-                        <div class="status-indicator"></div>
-                    `;
+                   playerCard.innerHTML = `
+                    <img src="${player.AvatarUrl}" alt="Аватар" class="player-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiBmaWxsPSIjYTU2YzM3Ij48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNTAiIGZpbGw9IiNmNmMwNmYiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIyMDAiIHI9IjgwIiBmaWxsPSIjZjZkNmE5Ii8+PC9zdmc+'">
+                    <div class="player-info">
+                    <div class="player-name">${player.Name}</div>
+                        ${steamName ? `<div class="player-steamname">Steam: ${steamName}</div>` : ''}
+                        <a href="https://steamcommunity.com/profiles/${player.SteamID}" target="_blank" class="player-steamid">
+                            ID: ${player.SteamID}
+                        </a>
+                    </div>
+                    <div class="status-indicator"></div>
+`                    ;
                     
                     playersList.appendChild(playerCard);
                 }
