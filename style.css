@@ -173,7 +173,7 @@ nav{
     overflow:hidden;
     font-size:36px;
 }
-.btn:active {
+.btn-nordic:active {
             transform: scale(0.95); /* Уменьшение размера на 5% */
         }
 .hero{
