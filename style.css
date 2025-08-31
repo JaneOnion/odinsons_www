@@ -155,13 +155,20 @@ nav{
     cursor:pointer;
     font-family:'NordicCyr-Bold.otf','AveriaSerifLibre',sans-serif
 }
-.btn:hover{
+/*.btn:hover{
     background-color:var(--c-palette-5);
-    transform:translateY(-2px)
+    transform:translateY(-2px)*/
 }
 .btn-nordic{
     font-family:'NordicCyr';
     background:linear-gradient(to bottom, #D9A566, #C8553D, #9E2B2B);
+    position:relative;
+    overflow:hidden;
+    font-size:36px;
+}
+.btn-nordic:hover{
+    font-family:'NordicCyr'
+    background:linear-gradient(to bottom, #3A4D5C, #506272, #A9B2B6);
     position:relative;
     overflow:hidden;
     font-size:36px;
