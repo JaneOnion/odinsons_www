@@ -142,7 +142,7 @@ nav{
 .btn{
     display:inline-block;
     background-color:var(--accent);
-    color:var(--c-palette-6);
+    color: #D1D9DB;
     padding:12px 25px;
     border-radius:8px;
     text-decoration:none;
