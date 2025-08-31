@@ -1,14 +1,14 @@
-@font-face {
-    font-family: "Vollkorn";
-    src: url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.eot");
-    src: url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.svg#Vollkorn")format("svg");
-}
 @font-face{font-family:'NordicCyr';src:url('NordicCyr-Bold.otf') format('opentype');font-weight:700;font-style:normal}
 @font-face{font-family:'AveriaSerifLibre';src:url('AveriaSerifLibre-Bold.woff2') format('woff2');font-weight:700;font-style:normal}
+@font-face {
+    font-family: "Montserrat";
+    src: url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot");
+    src: url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.svg#Montserrat")format("svg");
+}
 
 :root{
     --c-palette-1: #252222;
@@ -32,7 +32,7 @@ body{
     line-height:1.6;
     background-image:radial-gradient(ellipse at top,var(--c-palette-2)50%,var(--c-palette-1));
     scroll-behavior:smooth;
-    font-family:'Vollkorn',sans-serif;
+    font-family:'Montserrat',sans-serif;
     position:relative;
     overflow-x:hidden
 }
