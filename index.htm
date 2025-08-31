@@ -194,17 +194,16 @@
         // форматирование времени обновления
         function formatUpdateTime(date) {
             return `Обновлено: ${date.toLocaleTimeString()}`;
+        // грузим счётсик при загрузке страницы
+        fetchServerData();
+        // обновляем данные каждые 30 секунд
+        setInterval(fetchServerData, 30000);
         }
         
         // получение данных с серва
         async function fetchServerData() {
             const now = Date.now();
-            
-            // проверяем, прошло ли 5 секунд с последнего запроса
-            if (now - lastFetchTime < 5000 && playersList.children.length > 0) {
-                return;
-            }
-            
+                       
             lastFetchTime = now;
             
             playersLoading.style.display = 'block';
