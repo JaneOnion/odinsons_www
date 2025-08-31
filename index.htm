@@ -188,39 +188,18 @@
         
         let lastFetchTime = 0;
         let isDropdownOpen = false;
-        const steamApiKey = 'DC26DB5BEF60582AD9359C408F93EC95';
         
         // форматирование времени обновления
         function formatUpdateTime(date) {
             return `Обновлено: ${date.toLocaleTimeString()}`;
         }
         
-        // получение ника steam по steamid
-        async function getSteamName(steamId) {
-            if (!steamApiKey || steamApiKey === 'DC26DB5BEF60582AD9359C408F93EC95') {
-                return null;
-            }
-            
-            try {
-                const response = await fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${steamApiKey}&steamids=${steamId}`);
-                const data = await response.json();
-                
-                if (data.response && data.response.players && data.response.players.length > 0) {
-                    return data.response.players[0].personaname;
-                }
-            } catch (error) {
-                console.error('Ошибка получения Steam ника:', error);
-            }
-            
-            return null;
-        }
-        
-        // получение данных с сервера
+        // получение данных
         async function fetchServerData() {
             const now = Date.now();
             
-            // проверяем, прошло ли 5 секунд с последнего запроса
-            if (now - lastFetchTime < 5000) {
+            // прошло ли 5 секунд с последнего запроса
+            if (now - lastFetchTime < 5000 && playersList.children.length > 0) {
                 return;
             }
             
@@ -230,41 +209,61 @@
             playersError.style.display = 'none';
             
             try {
-                const response = await fetch('http://95.216.34.29:2519/serverinfo');
-                const data = await response.json();
+                // используем прокси для обхода CORS
+                const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+                const serverUrl = 'http://95.216.34.29:2519/serverinfo';
                 
+                const response = await fetch(corsProxy + serverUrl, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Ошибка HTTP: ${response.status}`);
+                }
+                
+                const data = await response.json();
                 updateUI(data);
             } catch (err) {
+                console.error('Ошибка загрузки данных:', err);
+                
+                // показываем ошибку
                 playersLoading.style.display = 'none';
                 playersError.style.display = 'block';
                 playersError.textContent = 'Ошибка загрузки данных с сервера';
-                console.error('Ошибка:', err);
                 
-                // демо, если сбой
+                // через 2 секунды показываем демку
                 setTimeout(() => {
                     const demoData = {
                         "name": "OdinSonsLite",
-                        "playersCount": 2,
+                        "playersCount": 16,
                         "players": [
                             {
-                                "Name": "DrMaD",
-                                "SteamID": "76561198347247608",
-                                "AvatarUrl": "https://avatars.steamstatic.com/3367032b07f5e7b7d0ac0f2a61f4c4083872c877_full.jpg"
+                                "Name": "Cat",
+                                "SteamID": "76561198355154643",
+                                "AvatarUrl": "https://avatars.steamstatic.com/def6522d08f6e5b0a96c50c8c14466131d1c8c10_full.jpg"
                             },
                             {
-                                "Name": "Лапшеслав",
+                                "Name": "ЛаПшЕсЛaB",
                                 "SteamID": "76561198088159603",
                                 "AvatarUrl": "https://avatars.steamstatic.com/c242d9d3255ca277519a201d830ca650d29f5895_full.jpg"
+                            },
+                            {
+                                "Name": "Ворон",
+                                "SteamID": "76561198257020427",
+                                "AvatarUrl": "https://avatars.steamstatic.com/60955e23eec36b21dbfcf842dbb03674d29e73a9_full.jpg"
                             }
                         ]
                     };
                     updateUI(demoData);
-                }, 1000);
+                    playersError.textContent = 'Показаны демо-данные (реальные недоступны)';
+                }, 2000);
             }
         }
         
         // обновление интерфейса
-        async function updateUI(data) {
+        function updateUI(data) {
             onlineCount.textContent = data.playersCount;
             onlinePlayersCount.textContent = data.playersCount;
             
@@ -275,22 +274,16 @@
                     const playerCard = document.createElement('div');
                     playerCard.className = 'player-card';
                     
-                    let steamName = null;
-                    if (steamApiKey && steamApiKey !== 'DC26DB5BEF60582AD9359C408F93EC95') {
-                        steamName = await getSteamName(player.SteamID);
-                    }
-                    
-                   playerCard.innerHTML = `
-                    <img src="${player.AvatarUrl}" alt="Аватар" class="player-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiBmaWxsPSIjYTU2YzM3Ij48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNTAiIGZpbGw9IiNmNmMwNmYiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIyMDAiIHI9IjgwIiBmaWxsPSIjZjZkNmE5Ii8+PC9zdmc+'">
-                    <div class="player-info">
-                    <div class="player-name">${player.Name}</div>
-                        ${steamName ? `<div class="player-steamname">Steam: ${steamName}</div>` : ''}
-                        <a href="https://steamcommunity.com/profiles/${player.SteamID}" target="_blank" class="player-steamid">
-                            ID: ${player.SteamID}
-                        </a>
-                    </div>
-                    <div class="status-indicator"></div>
-`                    ;
+                    playerCard.innerHTML = `
+                        <img src="${player.AvatarUrl}" alt="Аватар" class="player-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiBmaWxsPSIjYTU2YzM3Ij48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNTAiIGZpbGw9IiNmNmMwNmYiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIyMDAiIHI9IjgwIiBmaWxsPSIjZjZkNmE5Ii8+PC9zdmc+'">
+                        <div class="player-info">
+                            <div class="player-name">${player.Name}</div>
+                            <a href="https://steamcommunity.com/profiles/${player.SteamID}" target="_blank" class="player-steamid">
+                                ID: ${player.SteamID}
+                            </a>
+                        </div>
+                        <div class="status-indicator"></div>
+                    `;
                     
                     playersList.appendChild(playerCard);
                 }
@@ -331,11 +324,6 @@
         
         // инициализация времени обновления
         playersUpdated.textContent = formatUpdateTime(new Date());
-        
-        // грузим данные при первом открытии
-        if (isDropdownOpen) {
-            fetchServerData();
-        }
     });
 </script>
 </body>
