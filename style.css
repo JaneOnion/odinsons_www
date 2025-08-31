@@ -10,28 +10,28 @@
 @font-face{font-family:'NordicCyr';src:url('NordicCyr-Bold.otf') format('opentype');font-weight:700;font-style:normal}
 
 :root{
-    --c-palette-1:#2b1e14;
-    --c-palette-2:#452b18;
-    --c-palette-3:#f7d6a9;
-    --c-palette-4:#998e8a;
-    --c-palette-5:#a56c37;
-    --c-palette-6:#f6c06f;
-    --primary:var(--c-palette-2);
-    --secondary:var(--c-palette-1);
-    --accent:var(--c-palette-6);
-    --text:var(--c-palette-3);
-    --dark:#121212;
-    --light:#f8f9fa
+    --c-palette-1: #252222;
+    --c-palette-2: #d9a56636;
+    --c-palette-3: #D1D9DB;
+    --c-palette-4: #998e8a;
+    --c-palette-5: #E9B44C;
+    --c-palette-6: #ffb100;
+    --primary: #6f4c4c;
+    --secondary: #2d3a3a;
+    --accent: #88CCEC;
+    --text: var(--c-palette-3);
+    --dark: #121212;
+    --light: #f8f9fa
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{
     background-color:var(--secondary);
-    color:var(--text);
+    color: #D1D9DB;
     line-height:1.6;
     background-image:radial-gradient(ellipse at top,var(--c-palette-2)50%,var(--c-palette-1));
     scroll-behavior:smooth;
-    font-family:"Vollkorn",sans-serif;
+    font-family:'Vollkorn',sans-serif;
     position:relative;
     overflow-x:hidden
 }
@@ -102,7 +102,7 @@ nav{
     align-items:center;
     font-size:1.8rem;
     font-weight:700;
-    color:var(--accent);
+    color: #D9A566;
     text-decoration:none
 }
 .logo img{
@@ -159,13 +159,11 @@ nav{
 }
 .btn-nordic{
     font-family:'NordicCyr';
-    background:linear-gradient(to bottom,var(--c-palette-5),var(--c-palette-1));
-    border:2px solid var(--c-palette-6);
+    background:linear-gradient(to bottom, #D9A566, #C8553D);
     position:relative;
     overflow:hidden;
     font-size:36px;
 }
-
 .hero{
     padding:100px 0 30px;
     position:relative;
@@ -173,16 +171,12 @@ nav{
     flex-wrap:wrap
 }
 .welcome-section{
-    width:70%;
+    width:100%;
     padding-right:30px
-}
-.discord-widget{
-    width:30%;
 }
 .hero h1{
     font-size:2.8rem;
     margin-bottom:15px;
-    text-shadow:2px 2px 5px rgba(0,0,0,0.5);
     color:var(--accent)
 }
 .hero p{
@@ -204,12 +198,10 @@ nav{
     margin-top:15px
 }
 .feature-item{
-    flex:1;
-    text-align:center;
-    padding:20px 15px;
-    background:rgba(69,43,24,0.2);
-    border-radius:8px;
-    border:1px solid rgba(165,108,55,0.3)
+    flex: 1;
+    text-align: center;
+    padding: 20px 15px;
+    background: rgb(217 165 102 / 30%);
 }
 .feature-icon{
     font-size:2.5rem;
@@ -309,7 +301,7 @@ nav{
     opacity:0.3
 }
 footer{
-    background-color:rgba(43,30,20,0.95);
+    background-color:rgba(37,34,34,0.9);
     padding:15px 0;
     border-top:2px solid var(--c-palette-5);
     text-align:center
@@ -330,7 +322,6 @@ footer::before{
 
 @media (max-width:1024px){
     .welcome-section{width:60%}
-    .discord-widget{width:40%}
     .features-grid{flex-wrap:wrap}
     .feature-item{flex:0 0 calc(50% - 20px);margin-bottom:20px}
     .side-background{display:none}
@@ -340,7 +331,6 @@ footer::before{
     .header-buttons{display:none}
     .hero h1{font-size:2.2rem}
     .welcome-section,.discord-widget{width:100%;padding:0}
-    .discord-widget{margin-top:30px}
     .feature-item{flex:0 0 100%}
 }
 /* стили для всех ссылок */
