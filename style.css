@@ -1,4 +1,12 @@
-@font-face{font-family:'AveriaSerifLibre';src:url('AveriaSerifLibre-Bold.woff2') format('woff2');font-weight:700;font-style:normal}
+@font-face {
+    font-family: "Vollkorn";
+    src: url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.eot");
+    src: url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/766d679f3242fbf580362a9838c40083.svg#Vollkorn")format("svg");
+}
 @font-face{font-family:'NordicCyr';src:url('NordicCyr-Bold.otf') format('opentype');font-weight:700;font-style:normal}
 
 :root{
@@ -22,9 +30,8 @@ body{
     color:var(--text);
     line-height:1.6;
     background-image:radial-gradient(ellipse at top,var(--c-palette-2)50%,var(--c-palette-1));
-    text-shadow:1px 1px 2px var(--c-palette-1);
     scroll-behavior:smooth;
-    font-family:'AveriaSerifLibre','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    font-family:"Vollkorn",sans-serif;
     position:relative;
     overflow-x:hidden
 }
