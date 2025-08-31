@@ -155,9 +155,10 @@ nav{
     cursor:pointer;
     font-family:'NordicCyr-Bold.otf','AveriaSerifLibre',sans-serif
 }
-/*.btn:hover{
+.btn:hover{
+    color: #1A1818;
     background-color:var(--c-palette-5);
-    transform:translateY(-2px)*/
+    transform:translateY(-2px)
 }
 .btn-nordic{
     font-family:'NordicCyr';
@@ -389,13 +390,6 @@ a:hover {
 
 .header-btn:hover svg {
     fill: var(--accent);
-}
-
-/* сохраняем стили кнопке */
-.btn:hover {
-    color: var(--c-palette-6);
-    background-color: var(--c-palette-5);
-    transform: translateY(-2px);
 }
 
 /* для ссылок в теле */
