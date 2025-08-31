@@ -161,7 +161,7 @@ nav{
 }
 .btn-nordic{
     font-family:'NordicCyr';
-    background:linear-gradient(to bottom, #D9A566, #C8553D);
+    background:linear-gradient(to bottom, #D9A566, #C8553D, #9E2B2B);
     position:relative;
     overflow:hidden;
     font-size:36px;
