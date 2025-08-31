@@ -174,7 +174,9 @@
             });
         });
     </script>
+    
     <script>
+        // выпадашка списка игроков онлайн
     document.addEventListener('DOMContentLoaded', function() {
         const onlineBtn = document.getElementById('onlineBtn');
         const onlineDropdown = document.getElementById('onlineDropdown');
@@ -194,11 +196,11 @@
             return `Обновлено: ${date.toLocaleTimeString()}`;
         }
         
-        // получение данных
+        // получение данных с серва
         async function fetchServerData() {
             const now = Date.now();
             
-            // прошло ли 5 секунд с последнего запроса
+            // проверяем, прошло ли 5 секунд с последнего запроса
             if (now - lastFetchTime < 5000 && playersList.children.length > 0) {
                 return;
             }
@@ -209,13 +211,11 @@
             playersError.style.display = 'none';
             
             try {
-                // используем прокси для обхода CORS
-                const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-                const serverUrl = 'http://95.216.34.29:2519/serverinfo';
-                
-                const response = await fetch(corsProxy + serverUrl, {
+                // пробуем прямой запрос к апи
+                const response = await fetch('http://95.216.34.29:2519/serverinfo', {
+                    mode: 'cors', // указываем режим cors
                     headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
+                        'Accept': 'application/json',
                     }
                 });
                 
@@ -228,37 +228,118 @@
             } catch (err) {
                 console.error('Ошибка загрузки данных:', err);
                 
-                // показываем ошибку
-                playersLoading.style.display = 'none';
-                playersError.style.display = 'block';
-                playersError.textContent = 'Ошибка загрузки данных с сервера';
-                
-                // через 2 секунды показываем демку
-                setTimeout(() => {
-                    const demoData = {
-                        "name": "OdinSonsLite",
-                        "playersCount": 16,
-                        "players": [
-                            {
-                                "Name": "Cat",
-                                "SteamID": "76561198355154643",
-                                "AvatarUrl": "https://avatars.steamstatic.com/def6522d08f6e5b0a96c50c8c14466131d1c8c10_full.jpg"
-                            },
-                            {
-                                "Name": "ЛаПшЕсЛaB",
-                                "SteamID": "76561198088159603",
-                                "AvatarUrl": "https://avatars.steamstatic.com/c242d9d3255ca277519a201d830ca650d29f5895_full.jpg"
-                            },
-                            {
-                                "Name": "Ворон",
-                                "SteamID": "76561198257020427",
-                                "AvatarUrl": "https://avatars.steamstatic.com/60955e23eec36b21dbfcf842dbb03674d29e73a9_full.jpg"
-                            }
-                        ]
-                    };
-                    updateUI(demoData);
-                    playersError.textContent = 'Показаны демо-данные (реальные недоступны)';
-                }, 2000);
+                // если прямой запрос не удался, пробуем через cors-прокси
+                try {
+                    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                    const encodedUrl = encodeURIComponent('http://95.216.34.29:2519/serverinfo');
+                    
+                    const proxyResponse = await fetch(proxyUrl + encodedUrl);
+                    
+                    if (!proxyResponse.ok) {
+                        throw new Error(`Ошибка HTTP прокси: ${proxyResponse.status}`);
+                    }
+                    
+                    const data = await proxyResponse.json();
+                    updateUI(data);
+                } catch (proxyErr) {
+                    console.error('Ошибка загрузки через прокси:', proxyErr);
+                    
+                    // если и прокси не работает, то
+                    playersLoading.style.display = 'none';
+                    playersError.style.display = 'block';
+                    playersError.textContent = 'Ошибка загрузки данных. А должно было выглядеть так.';
+                    
+                    // показываем демку через 1 секунду
+                    setTimeout(() => {
+                        const demoData = {
+                            "name": "OdinSonsLite",
+                            "playersCount": 16,
+                            "players": [
+                                {
+                                    "Name": "Cat",
+                                    "SteamID": "76561198355154643",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/def6522d08f6e5b0a96c50c8c14466131d1c8c10_full.jpg"
+                                },
+                                {
+                                    "Name": "ЛаПшЕсЛaB",
+                                    "SteamID": "76561198088159603",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/c242d9d3255ca277519a201d830ca650d29f5895_full.jpg"
+                                },
+                                {
+                                    "Name": "Ворон",
+                                    "SteamID": "76561198257020427",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/60955e23eec36b21dbfcf842dbb03674d29e73a9_full.jpg"
+                                },
+                                {
+                                    "Name": "Lore",
+                                    "SteamID": "76561198135621095",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/88e32ca1a33db3fe3e54feccc2e5ddd23fdc2de1_full.jpg"
+                                },
+                                {
+                                    "Name": "Фрейдис",
+                                    "SteamID": "76561198269519294",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/8bd82bbf11510c0c613db76ac0955de13903406a_full.jpg"
+                                },
+                                {
+                                    "Name": "Don Baton",
+                                    "SteamID": "76561199137162101",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/508464126a00472f553ca35d677a98c6a4812083_full.jpg"
+                                },
+                                {
+                                    "Name": "Muirtan",
+                                    "SteamID": "76561198064767050",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"
+                                },
+                                {
+                                    "Name": "Ryogga",
+                                    "SteamID": "76561198131245777",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/a8c5d92192f114f5ed05a03a86e53facc7d22a27_full.jpg"
+                                },
+                                {
+                                    "Name": "Nevermind",
+                                    "SteamID": "76561198129895699",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"
+                                },
+                                {
+                                    "Name": "Каллерия",
+                                    "SteamID": "76561199522772818",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/a4ebb79db861ef6ac968df6c140aabd3c9785ca7_full.jpg"
+                                },
+                                {
+                                    "Name": "Barketi Mikerko",
+                                    "SteamID": "76561198034979988",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/8c7f409082a5ab586cb7e03872f6ca20d7e2997b_full.jpg"
+                                },
+                                {
+                                    "Name": "Пират",
+                                    "SteamID": "76561198323012485",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/14937af69b7fddc66c840d8487cc47359ccdd10b_full.jpg"
+                                },
+                                {
+                                    "Name": "Jackroy",
+                                    "SteamID": "76561198032086266",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/18cf9e93edbe79213f24fd277a0c8fc05e9ec68f_full.jpg"
+                                },
+                                {
+                                    "Name": "Volkodav",
+                                    "SteamID": "76561198043081861",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_full.jpg"
+                                },
+                                {
+                                    "Name": "Tyler",
+                                    "SteamID": "76561198022524887",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/23adb5fd330875aa0547f0e0e83f545102480138_full.jpg"
+                                },
+                                {
+                                    "Name": "Варкнайт",
+                                    "SteamID": "76561198871536729",
+                                    "AvatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"
+                                }
+                            ]
+                        };
+                        updateUI(demoData);
+                    }, 1000);
+                }
             }
         }
         
@@ -288,7 +369,7 @@
                     playersList.appendChild(playerCard);
                 }
             } else {
-                playersList.innerHTML = '<div class="players-loading">В Валькнуте тихо... Нет игроков онлайн</div>';
+                playersList.innerHTML = '<div class="players-loading">На лайте тихо... Нет игроков онлайн</div>';
             }
             
             playersLoading.style.display = 'none';
@@ -326,5 +407,6 @@
         playersUpdated.textContent = formatUpdateTime(new Date());
     });
 </script>
+    
 </body>
 </html>
