@@ -158,7 +158,6 @@ nav{
 .btn:hover{
     color: #1A1818;
     background-color:var(--c-palette-5);
-    transform:translateY(-2px)
 }
 .btn-nordic{
     font-family:'NordicCyr';
@@ -174,6 +173,9 @@ nav{
     overflow:hidden;
     font-size:36px;
 }
+.btn:active {
+            transform: scale(0.95); /* Уменьшение размера на 5% */
+        }
 .hero{
     padding:100px 0 30px;
     position:relative;
