@@ -225,6 +225,7 @@ h2 {
 }
 h2-1 {
     display: block;
+    font-family:'AveriaSerifLibre';
     font-size: 30px;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
