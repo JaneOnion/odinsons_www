@@ -442,9 +442,9 @@ a:hover {
     top: 100%;
     right: 0;
     width: 320px;
-    background: rgba(43, 30, 20, 0.95);
+    background: rgba(37, 34, 34, 0.9);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--c-palette-5);
+    border: 1px solid ##d9a566c2;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     z-index: 1001;
