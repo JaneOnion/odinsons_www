@@ -57,12 +57,6 @@ h1,h2,h3,h4,h5,h6{
     letter-spacing:0.8rem;
     opacity:0.7
 }
-.rune-bg{
-    background-image:radial-gradient(circle at 20% 30%,rgba(165,108,55,0.1)0%,transparent 20%),radial-gradient(circle at 80% 70%,rgba(246,192,111,0.1)0%,transparent 20%);
-    background-size:300px 300px;
-    position:relative;
-    overflow:hidden
-}
 
 /* фоновые руны */
 .rune-background {
