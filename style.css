@@ -407,7 +407,7 @@ a:hover {
 .online-btn {
     display: flex;
     align-items: center;
-    background: #d9a56680;
+    background: #d9a5664f;
     color: var(--text);
     padding: 8px 12px;
     border-radius: 20px;
