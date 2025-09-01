@@ -174,7 +174,7 @@ nav{
     font-size:36px;
 }
 .btn-nordic:active {
-            transform: scale(0.95); /* Уменьшение размера на 5% */
+            transform: scale(0.9); /* Уменьшение размера на 10% */
         }
 .hero{
     padding:100px 0 30px;
