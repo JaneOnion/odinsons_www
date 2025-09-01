@@ -407,17 +407,16 @@ a:hover {
 .online-btn {
     display: flex;
     align-items: center;
-    background: rgba(69, 43, 24, 0.5);
+    background: #d9a56680;
     color: var(--text);
     padding: 8px 12px;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s;
-    border: 1px solid rgba(165, 108, 55, 0.3);
 }
 
 .online-btn:hover {
-    background: rgba(69, 43, 24, 0.8);
+    background: #d9a56680;
     transform: scale(1.05);
 }
 
