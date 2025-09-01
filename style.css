@@ -60,7 +60,7 @@ h1,h2,h3,h4,h5,h6{
 
 /* фоновые руны */
 .rune-background {
-    position:absolute;
+    position:fixed;
     z-index:-1;
     opacity:0.03;
     color:var(--accent);
