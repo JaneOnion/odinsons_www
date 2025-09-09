@@ -183,7 +183,7 @@ nav{
 .hero h1{
     font-size:2.8rem;
     margin-bottom:15px;
-    color:##d9a566
+    color:#d9a566
 }
 .hero p{
     font-size:21px;
@@ -226,7 +226,7 @@ h2 {
     margin-inline-end: 0px;
     font-weight: bold;
     unicode-bidi: isolate;
-    color:##d9a566
+    color:#d9a566
 }
 h2-1 {
     display: block;
@@ -242,7 +242,7 @@ h2-1 {
 }
 .feature-item h3{
     margin-bottom:10px;
-    color:##D1D9DB;
+    color:#D1D9DB;
     font-size:30px
 }
 .feature-item p{
@@ -264,7 +264,7 @@ h2-1 {
     margin:0 auto
 }
 .full-width-section h2 {
-    color:##d9a566;
+    color:#d9a566;
     margin-bottom:20px;
     font-size:2rem
 }
