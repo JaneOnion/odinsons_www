@@ -183,7 +183,7 @@ nav{
 .hero h1{
     font-size:2.8rem;
     margin-bottom:15px;
-    color:var(--accent)
+    color:##d9a566
 }
 .hero p{
     font-size:21px;
@@ -226,6 +226,7 @@ h2 {
     margin-inline-end: 0px;
     font-weight: bold;
     unicode-bidi: isolate;
+    color:##d9a566
 }
 h2-1 {
     display: block;
@@ -263,7 +264,7 @@ h2-1 {
     margin:0 auto
 }
 .full-width-section h2 {
-    color:var(--accent);
+    color:##d9a566;
     margin-bottom:20px;
     font-size:2rem
 }
