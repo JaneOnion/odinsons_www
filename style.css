@@ -150,7 +150,7 @@ nav{
     font-family:'NordicCyr-Bold.otf','AveriaSerifLibre',sans-serif
 }
 .btn:hover{
-    color: #1A1818;
+    color: #D1D9DB;
     background-color:var(--c-palette-5);
 }
 .btn-nordic{
