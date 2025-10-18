@@ -361,7 +361,7 @@ h2-1 {
 
 footer{
     background-color:rgba(37,34,34,0.9);
-    padding:15px 0;
+    padding:20px;
     border-top:2px solid var(--c-palette-5);
     text-align:center
 }
