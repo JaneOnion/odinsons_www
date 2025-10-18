@@ -217,7 +217,7 @@ nav{
     text-align: center
 }
 
-.hero p1{
+.instruction-block{
     font-size:19px;
     margin-bottom:6px;
     color:var(--text);
