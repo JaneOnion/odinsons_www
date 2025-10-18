@@ -206,13 +206,15 @@ nav{
 .hero h1{
     font-size:2.8rem;
     margin-bottom:15px;
-    color:#d9a566
+    color:#d9a566;
+    text-align: center
 }
 .hero p{
     font-size:21px;
     margin-bottom:6px;
     color:var(--text);
     line-height:1.5;
+    text-align: center
 }
 
 /* горизонтальное расположение особенностей */
