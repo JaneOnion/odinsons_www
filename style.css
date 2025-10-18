@@ -268,7 +268,8 @@ h2 {
     margin-inline-end: 0px;
     font-weight: bold;
     unicode-bidi: isolate;
-    color:#d9a566
+    color:#d9a566;
+    margin-bottom:30px
 }
 h2-1 {
     display: block;
@@ -307,7 +308,6 @@ h2-1 {
 }
 .full-width-section h2 {
     color:#d9a566;
-    margin-bottom:20px;
 }
 .full-width-section h3 {
     color:var(--accent);
