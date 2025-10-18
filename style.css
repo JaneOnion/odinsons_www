@@ -29,7 +29,7 @@
 body{
     background-color:var(--secondary);
     color: #D1D9DB;
-    line-height:1.6;
+    line-height:1;
     background-image:radial-gradient(ellipse at top,var(--c-palette-2)50%,var(--c-palette-1));
     scroll-behavior:smooth;
     font-family:'Montserrat',sans-serif;
