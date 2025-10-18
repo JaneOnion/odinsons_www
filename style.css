@@ -307,9 +307,9 @@ h2-1 {
     max-width:900px;
     margin:0 auto
 }
-.full-width-section h2 {
+/*.full-width-section h2 {
     color:#d9a566;
-}
+}*/
 .full-width-section h3 {
     color:var(--accent);
     margin-bottom:15px;
