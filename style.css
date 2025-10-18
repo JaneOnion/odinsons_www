@@ -151,8 +151,8 @@ nav{
     transform:scale(1.1)
 }
 .header-btn svg{
-    width:30px;
-    height:30px;
+    width:46.5px;
+    height:46.5px;
     fill:var(--text);
     transition:all 0.3s
 }
