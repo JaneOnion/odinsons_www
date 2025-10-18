@@ -222,7 +222,7 @@ nav{
     margin-bottom:6px;
     color:var(--text);
     line-height:1.5;
-    text-align: right
+    text-align: left
 }
 /* горизонтальное расположение особенностей */
 .features-section{
