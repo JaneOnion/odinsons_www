@@ -217,6 +217,13 @@ nav{
     text-align: center
 }
 
+.hero p1{
+    font-size:21px;
+    margin-bottom:6px;
+    color:var(--text);
+    line-height:1.5;
+    text-align: right
+}
 /* горизонтальное расположение особенностей */
 .features-section{
     width:100%;
