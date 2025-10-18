@@ -224,6 +224,10 @@ nav{
     line-height:1.5;
     text-align: left
 }
+img.instruction-arrow {
+    margin-right: 35px;
+    margin-bottom: -6px
+}
 /* горизонтальное расположение особенностей */
 .features-section{
     width:100%;
