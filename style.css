@@ -453,7 +453,7 @@ a:hover {
     align-items: center;
     background: #d9a5664f;
     color: var(--text);
-    padding: 8px 12px;
+    padding: 15px;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s;
