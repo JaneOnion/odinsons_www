@@ -228,6 +228,12 @@ img.instruction-arrow {
     margin-right: 35px;
     margin-bottom: -6px
 }
+img.separator {
+    max-width: 100%;  /* Не больше ширины контейнера */
+    height: auto;     /* Сохраняет пропорции */
+    display: block;
+    margin: 0 auto
+}
 /* горизонтальное расположение особенностей */
 .features-section{
     width:100%;
