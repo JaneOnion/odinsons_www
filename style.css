@@ -363,7 +363,8 @@ footer{
     background-color:rgba(37,34,34,0.9);
     padding:20px;
     border-top:2px solid var(--c-palette-5);
-    text-align:center
+    text-align:center;
+    line-height: 1.5
 }
 
 /* руны-подпись "сыны Одина" в подвале */
