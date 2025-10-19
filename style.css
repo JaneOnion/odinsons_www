@@ -162,7 +162,7 @@ nav{
     display:inline-block;
     background-color:var(--accent);
     color: #D1D9DB;
-    padding:15px;
+    padding:10px 20px;
     border-radius:8px;
     text-decoration:none;
     font-weight:700;
